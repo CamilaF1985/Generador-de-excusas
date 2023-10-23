@@ -22,15 +22,15 @@ window.onload = function() {
   }
 
   // Agregar un evento al botón (se hace click en el botón y este genera una excusa random)
-  document.getElementById("generateExcuseButton").addEventListener("click", function() {
+  document.getElementById("botonGeneradorDeExcusas").addEventListener("click", function() {
     let excusa = generarExcusa();
-    document.getElementById("excuseContent").textContent = excusa;
-    document.getElementById("excuseModal").style.display = "block";
+    document.getElementById("contenidoExcusa").textContent = excusa;
+    document.getElementById("modalDeExcusa").style.display = "block";
 });
 
 // Cierra el modal al hacer clic en la "x"
-document.getElementById("closeModal").addEventListener("click", function () {
-  document.getElementById("excuseModal").style.display = "none";
+document.getElementById("cerrarModal").addEventListener("click", function () {
+  document.getElementById("modalDeExcusa").style.display = "none";
 });
 
 // Función para crear el efecto typewriter
@@ -50,10 +50,10 @@ function typeWriter(textElement, text, delay, callback) {
 }
 
 // Llamado a la función para aplicar el efecto typewriter al h1
-const header1 = document.getElementById("header1");
+const header1 = document.getElementById("encabezado1");
 typeWriter(header1, "Generador de Excusas", 100, function () {
   // Llamado a la función para aplicar el efecto typewriter al h2 después de que h1 haya terminado
-  const header2 = document.getElementById("header2");
+  const header2 = document.getElementById("encabezado2");
   typeWriter(header2, "Presione el botón para generar una excusa aleatoria:", 100);
 });
 
